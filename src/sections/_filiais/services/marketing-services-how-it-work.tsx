@@ -11,11 +11,12 @@ import Typography from '@mui/material/Typography';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import { Divider } from '@mui/material';
 
 import { CONFIG } from 'src/global-config';
 
 import { m } from 'framer-motion';
+
+import { Divider } from 'src/components/catalyst-layout/divider';
 
 // ----------------------------------------------------------------------
 
@@ -53,7 +54,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         sx={[
           (theme) => ({
             ...theme.mixins.bgGradient({
-              images: [`url(${CONFIG.assetsDir}/assets/images/home/bluesky.jpg)`],
+              images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
             }),
             color: 'common.white',
           }),
@@ -64,7 +65,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         <m.div>
           <Typography
             marginTop={'250px'}
-            paddingBottom={''}
+            paddingBottom={'80px'}
             fontSize={'182px'}
             fontWeight={'900'}
             sx={{
@@ -89,7 +90,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               }),
               color: 'common.white',
               py: { xs: 30, md: 35 },
-              marginTop: '-142px',
+              marginTop: '-162px',
             }),
             ...(Array.isArray(sx) ? sx : [sx]),
           ]}
@@ -140,7 +141,8 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
           </Container>
         </Box>
       </Box>
-      <Divider component="section" className="h-0 border-r-8 w-120 bg-gray-600" />
+      {/* <Divider component="section" className="h-0 border-r-8 w-120 bg-gray-600" /> */}
+      <Divider />
     </>
   );
 }

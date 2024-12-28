@@ -28,6 +28,7 @@ import {
 } from 'src/components/carousel';
 import { Divider } from '@mui/material';
 import { secondary } from 'src/theme';
+import { ComponentBox } from 'src/sections/_examples/layout';
 
 // ----------------------------------------------------------------------
 
@@ -36,7 +37,6 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
 
   return (
     <Box
-      className="h-700 w-200"
       component="section"
       sx={[
         (theme) => ({
@@ -61,73 +61,68 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
         sx={{ top: 0, right: 0, height: 2, width: 'auto', position: 'absolute' }}
       />
 
-      {/* <Container className="h-400" sx={{ position: 'relative', marginTop: '-80px' }}> */}
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          transform: 'translateY(-64px)',
-        }}
-      >
-        <CarouselDotButtons
-          variant="rounded"
-          scrollSnaps={carousel.dots.scrollSnaps}
-          selectedIndex={carousel.dots.selectedIndex}
-          onClickDot={carousel.dots.onClickDot}
-          sx={{ color: 'info.main' }}
-        />
-
-        <Carousel className="h-full w-full absolute inset-0 object-cover" carousel={carousel}>
-          {_productsCarousel.map((product, index) => (
-            <CarouselItem
-              key={product.id}
-              product={product}
-              selected={carousel.dots.selectedIndex === index}
-            />
-          ))}
-        </Carousel>
-
-        <CarouselArrowBasicButtons
-          {...carousel.arrows}
-          options={carousel.options}
-          slotProps={{
-            prevBtn: {
-              svgIcon: (
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m15 5l-6 7l6 7"
-                />
-              ),
-            },
-            nextBtn: {
-              svgIcon: (
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m9 5l6 7l-6 7"
-                />
-              ),
-            },
+      <Container sx={{ position: 'relative', marginTop: '-80px' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            transform: 'translateY(-64px)',
           }}
-          sx={{ gap: 1, color: 'info.main' }}
-        />
-      </Box>
-      {/* </Container> */}
-      <GlareCard className="flex flex-col items-start justify-end py-8 px-6">
-        <p className="font-bold text-white text-lg">The greatest trick</p>
-        <p className="font-normal text-base text-neutral-200 mt-4">
-          The greatest trick the devil ever pulled was to convince the world that he didn&apos;t
-          exist.
-        </p>
-      </GlareCard>
+        >
+          <GlareCard className="flex flex-col items-start justify-end py-8 px-6">
+            <CarouselDotButtons
+              variant="rounded"
+              scrollSnaps={carousel.dots.scrollSnaps}
+              selectedIndex={carousel.dots.selectedIndex}
+              onClickDot={carousel.dots.onClickDot}
+              sx={{ color: 'info.main' }}
+            />
+
+            <Carousel className="h-full w-full absolute inset-0 object-cover" carousel={carousel}>
+              {_productsCarousel.map((product, index) => (
+                <CarouselItem
+                  key={product.id}
+                  product={product}
+                  selected={carousel.dots.selectedIndex === index}
+                />
+              ))}
+            </Carousel>
+          </GlareCard>
+
+          <CarouselArrowBasicButtons
+            {...carousel.arrows}
+            options={carousel.options}
+            slotProps={{
+              prevBtn: {
+                svgIcon: (
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m15 5l-6 7l6 7"
+                  />
+                ),
+              },
+              nextBtn: {
+                svgIcon: (
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m9 5l6 7l-6 7"
+                  />
+                ),
+              },
+            }}
+            sx={{ gap: 1, color: 'info.main' }}
+          />
+        </Box>
+      </Container>
     </Box>
   );
 }
