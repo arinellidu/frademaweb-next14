@@ -17,7 +17,7 @@ export default function BlurryBlob({ className, firstBlobColor, secondBlobColor 
         ></div>
         <div
           className={cn(
-            'absolute -left-40 -top-64 h-72 w-72 animate-pop-blob rounded-sm bg-purple-400 p-8 opacity-45 mix-blend-multiply blur-3xl filter',
+            'absolute -left-40 -top-64 h-72 w-72 animate-pop-blob rounded-sm bg-green-400 p-8 opacity-45 mix-blend-multiply blur-3xl filter',
             className,
             secondBlobColor
           )}

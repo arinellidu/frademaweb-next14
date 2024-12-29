@@ -53,6 +53,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
       <Box
         sx={[
           (theme) => ({
+            paddingBottom: '40px',
             ...theme.mixins.bgGradient({
               images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
             }),
@@ -64,7 +65,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
       >
         <m.div>
           <Typography
-            marginTop={'250px'}
+            marginTop={'170px'}
             paddingBottom={'80px'}
             fontSize={'182px'}
             fontWeight={'900'}
@@ -90,7 +91,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               }),
               color: 'common.white',
               py: { xs: 30, md: 35 },
-              marginTop: '-162px',
+              marginTop: '-192px',
             }),
             ...(Array.isArray(sx) ? sx : [sx]),
           ]}
