@@ -60,6 +60,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
             }),
             color: 'common.white',
+            borderBottomStyle: 'inset',
           }),
           ...(Array.isArray(sx) ? sx : [sx]),
         ]}
