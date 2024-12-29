@@ -235,7 +235,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                     Entre em contato com um de nossos especialistas!
                   </Typography>
                   <BlurryBlob
-                    className=" rounded-xl opacity-45 bg-animate-pop-blob"
+                    className=" rounded-xl opacity-45"
                     firstBlobColor="bg-green-500"
                     secondBlobColor="bg-blue-800"
                   />
