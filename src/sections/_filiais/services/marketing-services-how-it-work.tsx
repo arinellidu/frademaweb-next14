@@ -16,7 +16,9 @@ import { CONFIG } from 'src/global-config';
 
 import { m } from 'framer-motion';
 
-import { Divider } from 'src/components/catalyst-layout/divider';
+import { Divider } from '@mui/material';
+
+// import { Divider } from 'src/components/catalyst-layout/divider';
 
 // ----------------------------------------------------------------------
 
@@ -53,7 +55,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
       <Box
         sx={[
           (theme) => ({
-            paddingBottom: '40px',
+            // paddingBottom: '40px',
             ...theme.mixins.bgGradient({
               images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
             }),
@@ -142,8 +144,8 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
           </Container>
         </Box>
       </Box>
-      {/* <Divider component="section" className="h-0 border-r-8 w-120 bg-gray-600" /> */}
-      <Divider />
+      <Divider component="section" className="h-0 border-r-8 w-120 bg-gray-600" />
+      {/* <Divider /> */}
     </>
   );
 }

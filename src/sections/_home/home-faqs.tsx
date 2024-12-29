@@ -22,6 +22,8 @@ import { varFade, MotionViewport } from 'src/components/animate';
 import BlurryBlob from 'src/components/animata/background/blurry-blob';
 import { MarketingContactInfo } from '../_filiais/contact/marketing-contact-info';
 
+import { Divider } from 'src/components/catalyst-layout/divider';
+
 // ----------------------------------------------------------------------
 
 const FAQs = [
@@ -155,78 +157,82 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
   );
 
   const renderList = () => (
-    <Box sx={{ my: { xs: 5, md: 10 } }}>
-      {FAQs.map((faq) => (
-        <Accordion
-          key={faq.question}
-          expanded={expanded === faq.question}
-          onChange={handleChangeExpanded(faq.question)}
-        >
-          <AccordionSummary>
-            <Typography variant="h6" sx={{ pr: 1, flexGrow: 1 }}>
-              {faq.question}
-            </Typography>
+    <>
+      <Box sx={{ my: { xs: 5, md: 10 } }}>
+        {FAQs.map((faq) => (
+          <Accordion
+            key={faq.question}
+            expanded={expanded === faq.question}
+            onChange={handleChangeExpanded(faq.question)}
+          >
+            <AccordionSummary>
+              <Typography variant="h6" sx={{ pr: 1, flexGrow: 1 }}>
+                {faq.question}
+              </Typography>
 
-            <Iconify
-              icon={expanded === faq.question ? 'eva:minus-outline' : 'eva:plus-outline'}
-              sx={{ transform: 'translateY(4px)' }}
-            />
-          </AccordionSummary>
+              <Iconify
+                icon={expanded === faq.question ? 'eva:minus-outline' : 'eva:plus-outline'}
+                sx={{ transform: 'translateY(4px)' }}
+              />
+            </AccordionSummary>
 
-          <AccordionDetails sx={{ color: 'text.secondary' }}>{faq.answer}</AccordionDetails>
-        </Accordion>
-      ))}
-    </Box>
+            <AccordionDetails sx={{ color: 'text.secondary' }}>{faq.answer}</AccordionDetails>
+          </Accordion>
+        ))}
+      </Box>
+    </>
   );
 
   return (
-    <Box
-      component="section"
-      sx={[{ position: 'relative', py: { xs: 5, md: 10 } }, ...(Array.isArray(sx) ? sx : [sx])]}
-      {...other}
-    >
-      <Container component={MotionViewport}>
-        <Grid container spacing={{ md: 3 }} sx={{ justifyContent: 'center' }}>
-          <Grid size={{ xs: 12, md: 8 }}>
-            <m.div variants={variants}>
-              <Typography variant="h2" sx={{ textAlign: 'center' }}>
-                Perguntas Frequentes
-              </Typography>
-            </m.div>
-
-            <m.div variants={variants}>{renderList()}</m.div>
-
-            <Box
-              sx={(theme) => ({
-                gap: 3,
-                display: 'flex',
-                borderRadius: 3,
-                textAlign: 'center',
-                alignItems: 'center',
-                flexDirection: 'column',
-                px: { xs: 3, md: 5 },
-                py: { xs: 6, md: 8 },
-                border: `dashed 1px ${theme.vars.palette.divider}`,
-              })}
-            >
-              <m.div variants={variants}></m.div>
-
+    <>
+      <Divider soft my-6 />
+      <Box
+        component="section"
+        sx={[{ position: 'relative', py: { xs: 5, md: 10 } }, ...(Array.isArray(sx) ? sx : [sx])]}
+        {...other}
+      >
+        <Container component={MotionViewport}>
+          <Grid container spacing={{ md: 3 }} sx={{ justifyContent: 'center' }}>
+            <Grid size={{ xs: 12, md: 8 }}>
               <m.div variants={variants}>
-                <Typography component="h6" variant="h3">
-                  Tem mais dúvidas?
+                <Typography variant="h2" sx={{ textAlign: 'center' }}>
+                  Perguntas Frequentes
                 </Typography>
               </m.div>
-              <m.div>
-                <Typography sx={{ color: 'text.secondary' }}>
-                  Entre em contato com um de nossos especialistas!
-                </Typography>
-                <BlurryBlob
-                  className="rounded-xl opacity-45"
-                  firstBlobColor="bg-green-400"
-                  secondBlobColor="bg-blue-400"
-                />
-                <MarketingContactInfo className="justify-start align-middle ml-10" />
-                {/* <Button
+
+              <m.div variants={variants}>{renderList()}</m.div>
+
+              <Box
+                sx={(theme) => ({
+                  gap: 3,
+                  display: 'flex',
+                  borderRadius: 3,
+                  textAlign: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  px: { xs: 3, md: 5 },
+                  py: { xs: 6, md: 8 },
+                  border: `dashed 1px ${theme.vars.palette.divider}`,
+                })}
+              >
+                <m.div variants={variants}></m.div>
+
+                <m.div variants={variants}>
+                  <Typography component="h6" variant="h3">
+                    Tem mais dúvidas?
+                  </Typography>
+                </m.div>
+                <m.div>
+                  <Typography sx={{ color: 'text.secondary' }}>
+                    Entre em contato com um de nossos especialistas!
+                  </Typography>
+                  <BlurryBlob
+                    className="rounded-xl opacity-45"
+                    firstBlobColor="bg-green-400"
+                    secondBlobColor="bg-blue-400"
+                  />
+                  <MarketingContactInfo className="justify-start align-middle ml-10" />
+                  {/* <Button
                   size="large"
                   color="info"
                   variant="contained"
@@ -238,24 +244,25 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                 <Button size="large" color="info" variant="contained" href="#">
                   WhatsApp
                 </Button> */}
-              </m.div>
-            </Box>
+                </m.div>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
 
-        <TrianglePattern
-          sx={{
-            top: 80,
-            left: 0,
-            right: 0,
-            zIndex: -1,
-            mx: 'auto',
-            width: 600,
-            height: 600,
-            maxWidth: 1,
-          }}
-        />
-      </Container>
-    </Box>
+          <TrianglePattern
+            sx={{
+              top: 80,
+              left: 0,
+              right: 0,
+              zIndex: -1,
+              mx: 'auto',
+              width: 600,
+              height: 600,
+              maxWidth: 1,
+            }}
+          />
+        </Container>
+      </Box>
+    </>
   );
 }

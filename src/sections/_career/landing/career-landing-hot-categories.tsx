@@ -12,9 +12,9 @@ import Typography from '@mui/material/Typography';
 
 import { SvgColor } from 'src/components/svg-color';
 
-import { CONFIG } from 'src/global-config';
+// import { CONFIG } from 'src/global-config';
 import { varAlpha } from 'minimal-shared/utils';
-import { whitespace } from 'stylis';
+
 import { varFade, AnimateBorder, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -25,62 +25,62 @@ type Props = BoxProps & {
 
 export function CareerLandingHotCategories({ categories, sx, ...other }: Props) {
   return (
-    <Box
-      // className="bg-slate-950"
-      component="section"
-      sx={[
-        (theme) => ({
-          ...theme.mixins.bgGradient({
-            images: [
-              `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.75)}, ${theme.vars.palette.common.black})`,
-              // `url(${CONFIG.assetsDir}/assets/images/home/for-designer.webp)`,
-            ],
+    <>
+      <Box
+        component="section"
+        sx={[
+          (theme) => ({
+            ...theme.mixins.bgGradient({
+              images: [
+                `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.75)}, ${theme.vars.palette.common.black})`,
+                // `url(${CONFIG.assetsDir}/assets/images/home/for-designer.webp)`,
+              ],
+            }),
           }),
-        }),
-        { pt: { xs: 10, md: 15 }, pb: { xs: 5, md: 10 } },
-        ...(Array.isArray(sx) ? sx : [sx]),
-      ]}
-      {...other}
-    >
-      <m.div variants={variants}>
-        <Typography
-          variant="h2"
-          sx={(theme) => ({
-            ...theme.mixins.textGradient(
-              `90deg, ${theme.vars.palette.info.main} 40%, ${theme.vars.palette.secondary.main} 80%`
-            ),
-            display: 'flex',
-            textAlign: 'center',
-            bgcolor: 'grey.700',
-            color: 'common.white',
-            justifyContent: 'center',
-            py: { xs: 2.5, md: 5 },
-          })}
-        >
-          Serviços Prestados
-        </Typography>
-      </m.div>
+          { pt: { xs: 10, md: 15 }, pb: { xs: 5, md: 10 } },
+          ...(Array.isArray(sx) ? sx : [sx]),
+        ]}
+        {...other}
+      >
+        <m.div variants={variants}>
+          <Typography
+            variant="h2"
+            sx={(theme) => ({
+              ...theme.mixins.textGradient(
+                `90deg, ${theme.vars.palette.info.main} 40%, ${theme.vars.palette.secondary.main} 80%`
+              ),
+              display: 'flex',
+              textAlign: 'center',
+              bgcolor: 'grey.700',
+              color: 'common.white',
+              justifyContent: 'center',
+              py: { xs: 2.5, md: 5 },
+            })}
+          >
+            Serviços Prestados
+          </Typography>
+        </m.div>
 
-      <Container className=" rounded-2xl p-1.5 mb-2 border-solid">
-        <Box
-          className="mb-3"
-          sx={{
-            display: 'grid',
-            gap: { xs: 3, md: 5 },
-            my: { xs: 5, md: 10 },
-            gridTemplateColumns: {
-              xs: 'repeat(2, 1fr)',
-              sm: 'repeat(3, 1fr)',
-              md: 'repeat(4, 1fr)',
-            },
-          }}
-        >
-          {categories.map((category) => (
-            <CategoryItem key={category.id} category={category} />
-          ))}
-        </Box>
+        <Container className=" rounded-2xl p-1.5 mb-2 border-solid">
+          <Box
+            className="mb-3"
+            sx={{
+              display: 'grid',
+              gap: { xs: 3, md: 5 },
+              my: { xs: 5, md: 10 },
+              gridTemplateColumns: {
+                xs: 'repeat(2, 1fr)',
+                sm: 'repeat(3, 1fr)',
+                md: 'repeat(4, 1fr)',
+              },
+            }}
+          >
+            {categories.map((category) => (
+              <CategoryItem key={category.id} category={category} />
+            ))}
+          </Box>
 
-        {/* <Box sx={{ textAlign: 'center' }}>
+          {/* <Box sx={{ textAlign: 'center' }}>
           <Button
             color="inherit"
             size="large"
@@ -90,8 +90,9 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
             View all
           </Button>
         </Box> */}
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   );
 }
 

@@ -1,7 +1,7 @@
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 export function Divider({
-  soft = true,
+  soft = false,
   className,
   ...props
 }: { soft?: boolean } & React.ComponentPropsWithoutRef<'hr'>) {
@@ -12,9 +12,9 @@ export function Divider({
       className={clsx(
         className,
         'w-full border-t',
-        soft && 'border-zinc-950/60 dark:border-zinc-950',
+        soft && 'border-zinc-950/5 dark:border-white/5',
         !soft && 'border-zinc-950/10 dark:border-white/10'
       )}
     />
-  );
+  )
 }
