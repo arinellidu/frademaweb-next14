@@ -51,11 +51,12 @@ const TIMELINES = [
 
 export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
   return (
-    <>
+    <div className="md:max-2xl">
       <Box
         sx={[
           (theme) => ({
             // paddingBottom: '40px',
+            paddingTop: '80px',
             ...theme.mixins.bgGradient({
               images: [`url(${CONFIG.assetsDir}/assets/images/home/headertop.jpeg)`],
             }),
@@ -68,7 +69,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
       >
         <m.div>
           <Typography
-            marginTop={'170px'}
+            marginTop={'70px'}
             paddingBottom={'80px'}
             fontSize={'182px'}
             fontWeight={'900'}
@@ -147,6 +148,6 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
       </Box>
       <Divider component="section" className="h-0 border-r-8 w-120 bg-gray-600" />
       {/* <Divider /> */}
-    </>
+    </div>
   );
 }
