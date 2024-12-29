@@ -81,7 +81,7 @@ export function MarketingContact() {
         <div className="flex w-full justify-center lg:mt-2.5">
           <div className="relative flex w-full min-w-[20rem] max-w-[30rem] flex-col items-center overflow-visible md:min-w-[24rem]">
             <form className="z-10 space-y-6">
-              <div className="w-full space-y-6 rounded-xl border border-border bg-background px-6 py-10 shadow-sm">
+              <div className="mb-6 w-full space-y-6 rounded-xl border border-border bg-background px-6 py-10 shadow-xl">
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
                     <label htmlFor="fullName">Nome Completo</label>

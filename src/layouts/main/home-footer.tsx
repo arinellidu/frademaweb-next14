@@ -25,7 +25,7 @@ export function HomeFooter({ sx, ...other }: BoxProps) {
           <Typebot />
 
           <Box component="span" sx={{ color: 'text.secondary', typography: 'caption' }}>
-            © All rights reserved.
+            Fradema Team 2025 © All rights reserved.
           </Box>
           <Logo isSingle sx={{ mb: 4, justifyContent: 'center', alignContent: 'center' }} />
         </Container>

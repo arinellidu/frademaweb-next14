@@ -1,3 +1,4 @@
+const { animate } = require('motion');
 const { KEYFRAMES } = require('stylis');
 
 /** @type {import('tailwindcss').Config} */
@@ -20,7 +21,7 @@ module.exports = {
         },
         'pop-blob': {
           '0%': { transform: 'scale(1)' },
-          '33%': { transform: 'scale(1.2)' },
+          '33%': { transform: 'scale(2)' },
           '66%': { transform: 'scale(0.8)' },
           '100%': { transform: 'scale(1)' },
         },
@@ -65,7 +66,7 @@ module.exports = {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
-        animation: {
+        animate: {
           'pop-blob': 'pop-blob 5s infinite',
         },
         border: 'hsl(var(--border))',

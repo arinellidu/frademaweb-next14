@@ -185,10 +185,18 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
 
   return (
     <>
-      <Divider soft my-6 />
+      <Divider my-6 />
       <Box
         component="section"
-        sx={[{ position: 'relative', py: { xs: 5, md: 10 } }, ...(Array.isArray(sx) ? sx : [sx])]}
+        sx={[
+          {
+            position: 'relative',
+            paddingTop: '-10px',
+            marginBottom: '20px',
+            py: { xs: 5, md: 10 },
+          },
+          ...(Array.isArray(sx) ? sx : [sx]),
+        ]}
         {...other}
       >
         <Container component={MotionViewport}>
@@ -227,9 +235,9 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
                     Entre em contato com um de nossos especialistas!
                   </Typography>
                   <BlurryBlob
-                    className="rounded-xl opacity-45"
-                    firstBlobColor="bg-green-400"
-                    secondBlobColor="bg-blue-400"
+                    className=" rounded-xl opacity-45 bg-animate-pop-blob"
+                    firstBlobColor="bg-green-500"
+                    secondBlobColor="bg-blue-800"
                   />
                   <MarketingContactInfo className="justify-start align-middle ml-10" />
                   {/* <Button
@@ -248,10 +256,47 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
               </Box>
             </Grid>
           </Grid>
+          <TrianglePattern
+            sx={{
+              top: -40,
+              left: 0,
+              right: 500,
+              zIndex: -1,
+              mx: 'auto',
+              width: 600,
+              height: 600,
+              maxWidth: 1,
+            }}
+          />
+          <TrianglePattern
+            sx={{
+              top: -40,
+              left: 0,
+              right: 500,
+              zIndex: -1,
+              mx: 'auto',
+              width: 600,
+              height: 600,
+              maxWidth: 1,
+            }}
+          />
 
           <TrianglePattern
             sx={{
-              top: 80,
+              top: -40,
+              left: 0,
+              right: 0,
+              zIndex: -1,
+              mx: 'auto',
+              width: 600,
+              height: 600,
+              maxWidth: 1,
+            }}
+          />
+
+          <TrianglePattern
+            sx={{
+              top: -40,
               left: 0,
               right: 0,
               zIndex: -1,
