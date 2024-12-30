@@ -36,94 +36,97 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
   const carousel = useCarousel({ loop: true, duration: 80 }, [Autoplay({ delay: 5000 }), Fade()]);
 
   return (
-    <Box
-      component="section"
-      sx={[
-        (theme) => ({
-          ...theme.mixins.bgGradient({
-            images: [
-              `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.75)}, ${theme.vars.palette.common.black})`,
-              // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
-            ],
-          }),
-          overflow: 'hidden',
-          position: 'relative',
-        }),
-        ...(Array.isArray(sx) ? sx : [sx]),
-      ]}
-      {...other}
-    >
-      <Divider component="section" className="h-2 border-r-8 w-120" />
+    <div>
       <Box
-        component="img"
-        alt="Texture"
-        src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
-        sx={{ top: 0, right: 0, height: 2, width: 'auto', position: 'absolute' }}
-      />
-
-      <Container sx={{ position: 'relative', marginTop: '-80px' }}>
+        className="pb-20"
+        component="section"
+        sx={[
+          (theme) => ({
+            ...theme.mixins.bgGradient({
+              images: [
+                `radial-gradient(50% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0.75)}, ${theme.vars.palette.common.black})`,
+                // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
+              ],
+            }),
+            overflow: 'hidden',
+            position: 'relative',
+          }),
+          ...(Array.isArray(sx) ? sx : [sx]),
+        ]}
+        {...other}
+      >
+        <Divider component="section" className="h-2 border-r-8 w-120" />
         <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            transform: 'translateY(-64px)',
-          }}
-        >
-          <GlareCard className="flex flex-col items-start justify-end py-8 px-6">
-            <CarouselDotButtons
-              variant="rounded"
-              scrollSnaps={carousel.dots.scrollSnaps}
-              selectedIndex={carousel.dots.selectedIndex}
-              onClickDot={carousel.dots.onClickDot}
-              sx={{ color: 'info.main' }}
-            />
+          component="img"
+          alt="Texture"
+          src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
+          sx={{ top: 0, right: 0, height: 2, width: 'auto', position: 'absolute' }}
+        />
 
-            <Carousel className="h-full w-full absolute inset-0 object-cover" carousel={carousel}>
-              {_productsCarousel.map((product, index) => (
-                <CarouselItem
-                  key={product.id}
-                  product={product}
-                  selected={carousel.dots.selectedIndex === index}
-                />
-              ))}
-            </Carousel>
-          </GlareCard>
-
-          <CarouselArrowBasicButtons
-            {...carousel.arrows}
-            options={carousel.options}
-            slotProps={{
-              prevBtn: {
-                svgIcon: (
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m15 5l-6 7l6 7"
-                  />
-                ),
-              },
-              nextBtn: {
-                svgIcon: (
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m9 5l6 7l-6 7"
-                  />
-                ),
-              },
+        <Container sx={{ position: 'relative', marginTop: '-80px' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              transform: 'translateY(-64px)',
             }}
-            sx={{ gap: 1, color: 'info.main' }}
-          />
-        </Box>
-      </Container>
-    </Box>
+          >
+            <GlareCard className="flex flex-col items-start justify-center py-8 px-6">
+              {/* <CarouselDotButtons
+                variant="rounded"
+                scrollSnaps={carousel.dots.scrollSnaps}
+                selectedIndex={carousel.dots.selectedIndex}
+                onClickDot={carousel.dots.onClickDot}
+                sx={{ color: 'info.main' }}
+              /> */}
+
+              <Carousel className="h-full w-full absolute inset-0 object-cover" carousel={carousel}>
+                {_productsCarousel.map((product, index) => (
+                  <CarouselItem
+                    key={product.id}
+                    product={product}
+                    selected={carousel.dots.selectedIndex === index}
+                  />
+                ))}
+              </Carousel>
+            </GlareCard>
+            {/* 
+        <CarouselArrowBasicButtons
+          {...carousel.arrows}
+          options={carousel.options}
+          slotProps={{
+            prevBtn: {
+              svgIcon: (
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m15 5l-6 7l6 7"
+                />
+              ),
+            },
+            nextBtn: {
+              svgIcon: (
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m9 5l6 7l-6 7"
+                />
+              ),
+            },
+          }}
+          sx={{ gap: 1, color: 'info.main' }}
+        /> */}
+          </Box>
+        </Container>
+      </Box>
+    </div>
   );
 }
 

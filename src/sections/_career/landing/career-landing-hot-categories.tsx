@@ -15,7 +15,7 @@ import { SvgColor } from 'src/components/svg-color';
 // import { CONFIG } from 'src/global-config';
 import { varAlpha } from 'minimal-shared/utils';
 
-import { varFade, AnimateBorder, MotionViewport } from 'src/components/animate';
+import { varFade } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
 const variants: Variants = varFade('inUp', { distance: 24 });
@@ -25,7 +25,7 @@ type Props = BoxProps & {
 
 export function CareerLandingHotCategories({ categories, sx, ...other }: Props) {
   return (
-    <>
+    <div className="-mt-5">
       <Box
         component="section"
         sx={[
@@ -44,7 +44,7 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
       >
         <m.div variants={variants}>
           <Typography
-            variant="h2"
+            variant="h1"
             sx={(theme) => ({
               ...theme.mixins.textGradient(
                 `90deg, ${theme.vars.palette.info.main} 40%, ${theme.vars.palette.secondary.main} 80%`
@@ -54,16 +54,15 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
               bgcolor: 'grey.700',
               color: 'common.white',
               justifyContent: 'center',
-              py: { xs: 2.5, md: 5 },
+              py: { xs: 5, md: 10 },
             })}
           >
             Serviços Prestados
           </Typography>
         </m.div>
 
-        <Container className=" rounded-2xl p-1.5 mb-2 border-solid">
+        <Container className=" rounded-2xl border-solid -mt-10">
           <Box
-            className="mb-3"
             sx={{
               display: 'grid',
               gap: { xs: 3, md: 5 },
@@ -92,7 +91,7 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
         </Box> */}
         </Container>
       </Box>
-    </>
+    </div>
   );
 }
 

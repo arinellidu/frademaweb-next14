@@ -18,8 +18,7 @@ import { m } from 'framer-motion';
 
 import { Divider } from '@mui/material';
 import { autocomplete } from 'src/theme/core/components/autocomplete';
-
-// import { Divider } from 'src/components/catalyst-layout/divider';
+import BlurryBlob from 'src/components/animata/background/blurry-blob';
 
 // ----------------------------------------------------------------------
 
@@ -68,16 +67,17 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         ]}
         {...other}
       >
-        <Container>
+        <Container className="mb-5">
           <Typography
+            className="mix-blend-luminosity text-blue-800 "
             marginTop={'70px'}
             paddingBottom={'80px'}
             fontSize={'182px'}
             fontWeight={'900'}
             sx={{
               textAlign: 'center',
-              mixBlendMode: 'soft-light',
-              color: 'InfoBackground',
+              // mixBlendMode: 'soft-light',
+              // color: 'InfoBackground',
               mb: { xs: 5, md: 10 },
               mx: 'auto',
             }}
@@ -150,7 +150,6 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         </Box>
       </Box>
       <Divider component="section" className="h-0 border-r-8 w-120 bg-gray-600" />
-      {/* <Divider /> */}
     </div>
   );
 }

@@ -25,14 +25,14 @@ export const GlareCard = ({
     },
   });
   const containerStyle = {
-    width: '500px',
+    width: '1200px',
     height: '700px',
     '--m-x': '100%',
     '--m-y': '100%',
     '--r-x': '0deg',
     '--r-y': '0deg',
-    '--bg-x': '100%', // 50
-    '--bg-y': '100%', // 50
+    '--bg-x': '50%', // 50
+    '--bg-y': '50%', // 50
     '--duration': '300ms',
     '--foil-size': '100%',
     '--opacity': '0.5',
@@ -72,7 +72,7 @@ export const GlareCard = ({
       className="relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[320px] [aspect-ratio:17/21]"
       ref={refElement}
       onPointerMove={(event) => {
-        const rotateFactor = 0.5;
+        const rotateFactor = 0.7;
         const rect = event.currentTarget.getBoundingClientRect();
         const position = {
           x: event.clientX - rect.left,
