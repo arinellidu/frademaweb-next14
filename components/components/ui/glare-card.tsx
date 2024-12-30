@@ -25,7 +25,7 @@ export const GlareCard = ({
     },
   });
   const containerStyle = {
-    width: '1200px',
+    width: '1100px',
     height: '700px',
     '--m-x': '100%',
     '--m-y': '100%',

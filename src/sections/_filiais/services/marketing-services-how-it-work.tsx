@@ -69,7 +69,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
       >
         <Container className="mb-5">
           <Typography
-            className="mix-blend-luminosity text-blue-800 "
+            className="mix-blend-luminosity text-blue-700 "
             marginTop={'70px'}
             paddingBottom={'80px'}
             fontSize={'182px'}
@@ -98,7 +98,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               }),
               color: 'common.white',
               py: { xs: 30, md: 35 },
-              marginTop: '-192px',
+              marginTop: '-152px',
             }),
             ...(Array.isArray(sx) ? sx : [sx]),
           ]}

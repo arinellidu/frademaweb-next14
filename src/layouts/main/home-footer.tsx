@@ -7,11 +7,12 @@ import { Logo } from 'src/components/logo';
 
 import { Typebot } from 'src/components/typebot/typebot';
 
-import { MarketingContactInfo } from 'src/sections/_filiais/contact/marketing-contact-info';
+import { APP_NAME } from 'lib/constants';
 
 // ----------------------------------------------------------------------
 
 export function HomeFooter({ sx, ...other }: BoxProps) {
+  const currentYear = new Date().getFullYear();
   return (
     <>
       <Box component="footer" sx={[{ py: 8 }, ...(Array.isArray(sx) ? sx : [sx])]} {...other}>
@@ -23,11 +24,10 @@ export function HomeFooter({ sx, ...other }: BoxProps) {
           }}
         >
           <Typebot />
-
-          <Box component="span" sx={{ color: 'text.secondary', typography: 'caption' }}>
-            Fradema Team 2025 © All rights reserved.
-          </Box>
           <Logo isSingle sx={{ mb: 4, justifyContent: 'center', alignContent: 'center' }} />
+          <Box component="span" sx={{ color: 'text.secondary', typography: 'caption' }}>
+            {currentYear} {APP_NAME} © All rights reserved.
+          </Box>
         </Container>
       </Box>
     </>

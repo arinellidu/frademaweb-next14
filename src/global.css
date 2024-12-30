@@ -5,7 +5,6 @@
 /** **************************************
 * Fonts: app
 *************************************** */
-
 @import '@fontsource-variable/public-sans';
 
 @import '@fontsource/barlow/400.css';
@@ -37,7 +36,7 @@
 html {
   height: 100%;
   -webkit-overflow-scrolling: touch;
-  font-family: 'Inter';
+  font-family: 'Poppins';
 }
 body,
 #root,
@@ -127,6 +126,13 @@ input[type='number']::-webkit-inner-spin-button {
 @layer base {
   * {
     @apply border-border;
+  }
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300, 400, 500, 700, 900;
+    font-display: swap;
+    src: url(/fonts/Poppins.woff2) format('woff2');
   }
   body {
     @apply bg-background text-foreground;
