@@ -17,6 +17,7 @@ import { CONFIG } from 'src/global-config';
 import { m } from 'framer-motion';
 
 import { Divider } from '@mui/material';
+import { autocomplete } from 'src/theme/core/components/autocomplete';
 
 // import { Divider } from 'src/components/catalyst-layout/divider';
 
@@ -67,7 +68,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
         ]}
         {...other}
       >
-        <m.div>
+        <Container>
           <Typography
             marginTop={'70px'}
             paddingBottom={'80px'}
@@ -77,11 +78,13 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
               textAlign: 'center',
               mixBlendMode: 'soft-light',
               color: 'InfoBackground',
+              mb: { xs: 5, md: 10 },
+              mx: 'auto',
             }}
           >
             FRADEMA
           </Typography>
-        </m.div>
+        </Container>
 
         <Box
           component="section"
