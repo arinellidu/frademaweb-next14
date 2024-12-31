@@ -185,7 +185,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
 
   return (
     <>
-      <Divider my-6 className="" />
+      <Divider my-6 />
       <Box
         component="section"
         sx={[
@@ -203,9 +203,9 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
           <Grid container spacing={{ md: 3 }} sx={{ justifyContent: 'center' }}>
             <Grid size={{ xs: 12, md: 8 }}>
               <m.div variants={variants}>
-                <Typography variant="h2" sx={{ textAlign: 'center' }}>
+                <h2 className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
                   Perguntas Frequentes
-                </Typography>
+                </h2>
               </m.div>
 
               <m.div variants={variants}>{renderList()}</m.div>

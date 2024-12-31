@@ -23,10 +23,10 @@ export function MarketingContact() {
       {/* Background pattern */}
       <div className="pointer-events-none absolute inset-x-0 -bottom-20 -top-20 bg-[radial-gradient(hsl(var(--accent-foreground)/0.5)_1px,transparent_1px)] [background-size:8px_8px] [mask-image:radial-gradient(ellipse_60%_60%_at_65%_50%,#000_10%,transparent_50%)]"></div>
       <div className="container ml-10 grid w-full grid-cols-1 gap-x-32 overflow-hidden lg:grid-cols-2">
-        <div className="w-full pb-10 md:space-y-10 md:pb-0">
+        <div className="ml-10 w-full pb-10 md:space-y-10 md:pb-0">
           <div className="space-y-4 md:max-w-[40rem]">
             <h1 className="text-4xl font-bold lg:text-5xl ml-3">
-              Fale com um de nossos Consultores
+              Fale com um de nossos <span className="text-indigo-400">Consultores</span>
             </h1>
             <div className="text-muted-foreground md:text-base lg:text-lg lg:leading-7 ml-3">
               In non libero bibendum odio pellentesque ullamcorper. Aenean condimentum, dolor
@@ -161,7 +161,9 @@ export function MarketingContact() {
                   </Select>
                 </div>
                 <div className="flex w-full flex-col justify-end space-y-3 pt-2">
-                  <Button type="submit">Enviar formulário</Button>
+                  <Button className="bg-indigo-400" type="submit">
+                    Enviar formulário
+                  </Button>
                   <div className="text-xs text-muted-foreground">
                     Seus dados serão vistos e armazenados somente pela empresa. Para saber mais,
                     leia nossa{' '}

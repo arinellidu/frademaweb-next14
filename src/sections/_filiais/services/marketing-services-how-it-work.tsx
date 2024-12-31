@@ -61,13 +61,14 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
       >
         <Container className="mb-5">
           <Typography
-            className="mix-blend-luminosity justify-center text-slate-700"
+            className="justify-center text-indigo-950"
             marginTop={'70px'}
             paddingBottom={'80px'}
             fontSize={'182px'}
             fontWeight={'900'}
             sx={{
               textAlign: 'center',
+              // color: '#5C6BC0',
               // mixBlendMode: 'soft-light',
               // color: 'InfoBackground',
               mb: { xs: 5, md: 10 },

@@ -23,7 +23,6 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '700', '900'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
-  display: 'swap',
 });
 
 export const viewport: Viewport = {

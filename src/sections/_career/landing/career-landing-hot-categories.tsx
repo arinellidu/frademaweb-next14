@@ -42,26 +42,16 @@ export function CareerLandingHotCategories({ categories, sx, ...other }: Props) 
         ]}
         {...other}
       >
-        <m.div variants={variants}>
-          <Typography
-            variant="h1"
-            sx={(theme) => ({
-              ...theme.mixins.textGradient(
-                `90deg, ${theme.vars.palette.info.main} 40%, ${theme.vars.palette.secondary.main} 80%`
-              ),
-              display: 'flex',
-              textAlign: 'center',
-              bgcolor: 'grey.700',
-              color: 'common.white',
-              justifyContent: 'center',
-              py: { xs: 5, md: 10 },
-            })}
-          >
-            Serviços Prestados
-          </Typography>
-        </m.div>
+        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+          <h2 className="mb-3 ml-6 text-base/7 font-semibold text-indigo-400">
+            As melhores estratégias
+          </h2>
+          <p className="mb-6 ml-6 mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            Nossos serviços você encontra aqui
+          </p>
+        </div>
 
-        <Container className=" rounded-2xl border-solid -mt-10">
+        <Container className=" rounded-2xl border-solid -mt-6">
           <Box
             sx={{
               display: 'grid',
@@ -103,76 +93,78 @@ type CategoryItemProps = {
 
 function CategoryItem({ category }: CategoryItemProps) {
   return (
-    <Paper
-      className=" mb-3 outline-dotted shadow-2xl outline-sky-400 cursor-pointer border-solid hover:bg-zinc-50"
-      variant="outlined"
-      sx={(theme) => ({
-        p: 0,
-        minWidth: 1,
-        textAlign: 'center',
-        position: 'relative',
-        aspectRatio: '1/1',
-        borderRadius: 2,
-        display: 'flex',
-        alignItems: 'center',
-        bgcolor: 'transparent',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        color: 'white',
-        // color: 'dodgerblue',
-        // color: 'blueviolet',
-        // boxShadow: theme.vars.customShadows.card,
-        transition: theme.transitions.create(['all']),
-        '&:hover': {
-          // bgcolor: 'background.paper',
-          color: 'dodgerblue',
-          boxShadow: theme.vars.customShadows.z24,
-          '& .icon': {
-            color: 'common.white',
-            bgcolor: 'dodgerblue',
-            transition: theme.transitions.create(['all']),
+    <div className="hover:fill-indigo-400">
+      <Paper
+        className="mb-3 outline-dotted shadow-2xl outline-indigo-400 cursor-pointer border-solid  hover:bg-zinc-50  hover:text-indigo-400"
+        // variant="outlined"
+        sx={(theme) => ({
+          p: 0,
+          minWidth: 1,
+          textAlign: 'center',
+          position: 'relative',
+          aspectRatio: '1/1',
+          borderRadius: 2,
+          display: 'flex',
+          alignItems: 'center',
+          bgcolor: 'transparent',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          color: 'white',
+          // color: 'dodgerblue',
+          // color: 'blueviolet',
+          // boxShadow: theme.vars.customShadows.card,
+          transition: theme.transitions.create(['all']),
+          '&:hover': {
+            // bgcolor: 'background.paper',
+            color: '#5C6BC0',
+            boxShadow: theme.vars.customShadows.z24,
+            '& .icon': {
+              color: 'common.white',
+              bgcolor: '#5C6BC0',
+              transition: theme.transitions.create(['all']),
+            },
           },
-        },
-      })}
-      // sx={(theme) => ({
-      //   p: 0,
-      //   minWidth: 1,
-      //   borderRadius: 2,
-      //   display: 'flex',
-      //   cursor: 'pointer',
-      //   aspectRatio: '1/1',
-      //   textAlign: 'center',
-      //   position: 'relative',
-      //   alignItems: 'center',
-      //   bgcolor: 'transparent',
-      //   flexDirection: 'column',
-      //   justifyContent: 'center',
-      //   transition: theme.transitions.create(['all']),
-      //   '&:hover': {
-      //     bgcolor: 'background.paper',
-      //     boxShadow: theme.vars.customShadows.z24,
-      // '& .icon': {
-      //   color: 'common.white',
-      //   // bgcolor: 'info.main',
-      //   transition: theme.transitions.create(['all']),
-      // },
-      //   },
-      // })}
-    >
-      <Box
-        className="icon"
-        component="span"
-        sx={{ display: 'flex', p: 2, mb: 1, borderRadius: '50%' }}
+        })}
+        // sx={(theme) => ({
+        //   p: 0,
+        //   minWidth: 1,
+        //   borderRadius: 2,
+        //   display: 'flex',
+        //   cursor: 'pointer',
+        //   aspectRatio: '1/1',
+        //   textAlign: 'center',
+        //   position: 'relative',
+        //   alignItems: 'center',
+        //   bgcolor: 'transparent',
+        //   flexDirection: 'column',
+        //   justifyContent: 'center',
+        //   transition: theme.transitions.create(['all']),
+        //   '&:hover': {
+        //     bgcolor: 'background.paper',
+        //     boxShadow: theme.vars.customShadows.z24,
+        // '& .icon': {
+        //   color: 'common.white',
+        //   // bgcolor: 'info.main',
+        //   transition: theme.transitions.create(['all']),
+        // },
+        //   },
+        // })}
       >
-        <SvgColor src={category.icon} sx={{ width: 40, height: 40 }} />
-      </Box>
+        <Box
+          className="icon"
+          component="span"
+          sx={{ display: 'flex', p: 2, mb: 1, borderRadius: '50%' }}
+        >
+          <SvgColor src={category.icon} sx={{ width: 40, height: 40 }} />
+        </Box>
 
-      <Typography variant="h6" noWrap sx={{ px: 2, width: 1 }}>
-        {category.name}
-      </Typography>
-      <Typography variant="body2" sx={{ mt: 0.5, color: 'text.disabled' }}>
-        {/* {category.totalJobs} jobs */}
-      </Typography>
-    </Paper>
+        <Typography variant="h6" noWrap sx={{ px: 2, width: 1 }}>
+          {category.name}
+        </Typography>
+        <Typography variant="body2" sx={{ mt: 0.5, color: 'text.disabled' }}>
+          {/* {category.totalJobs} jobs */}
+        </Typography>
+      </Paper>
+    </div>
   );
 }
