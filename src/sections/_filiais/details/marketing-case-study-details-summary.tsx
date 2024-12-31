@@ -7,10 +7,11 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 
-import { fDate } from 'src/utils/format-time';
-
 import { _socials } from 'src/_mock';
 import { TwitterIcon, FacebookIcon, LinkedinIcon, InstagramIcon } from 'src/assets/icons';
+import { locale } from 'dayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { MonthCalendar } from '@mui/x-date-pickers/MonthCalendar';
 
 // ----------------------------------------------------------------------
 
@@ -42,12 +43,16 @@ export function MarketingCaseStudyDetailsSummary({
 
   const renderItem = (label: string, value?: string | React.ReactNode) => (
     <Box sx={{ '&:not(:first-of-type)': { mt: 2 } }}>
-      <Typography variant="overline" sx={{ mb: 1, display: 'block', color: 'text.disabled' }}>
+      <Typography className="text-green-600" variant="overline" sx={{ mb: 1, display: 'block' }}>
         {label}
       </Typography>
       {typeof value === 'string' ? <Typography variant="body2">{value}</Typography> : value}
     </Box>
   );
+
+  // const todaySeconds = new Date().getSeconds();
+  const todayHours = new Date().getHours();
+  const todayMinutes = new Date().getMinutes();
 
   return (
     <Box
@@ -63,33 +68,28 @@ export function MarketingCaseStudyDetailsSummary({
       ]}
       {...other}
     >
-      <Typography variant="overline" sx={{ mb: 2, color: 'text.disabled' }}>
-        summary
-      </Typography>
-
-      <Typography variant="h6" sx={{ mb: 2 }}>
+      {/* <Typography
+        className="hover:text-green-600"
+        variant="overline"
+        sx={{ mb: 2, color: 'text.disabled' }}
+      ></Typography> */}
+      <Typography className="text-green-600" variant="h6" sx={{ mb: 2 }}>
         {title}
       </Typography>
-
       <Typography variant="body2">{description}</Typography>
-
       {renderDivider()}
-
       {renderItem(
-        'Website',
-        <Link variant="body2" color="inherit">
-          {website}
+        'WhatsApp',
+
+        <Link className="hover:text-green-600" variant="body2" color="inherit">
+          botar função whatsapp API {website}
         </Link>
       )}
-
-      {renderItem('Category', category)}
-
-      {renderItem('Date', fDate(createdAt))}
-
+      {renderItem('Informação Atualizada Em:')}
+      {todayHours}h{todayMinutes}min
       {renderDivider()}
-
       <Box sx={{ gap: 1, display: 'flex', alignItems: 'center' }}>
-        <Typography variant="subtitle2">Share:</Typography>
+        <Typography variant="subtitle2">Compartilhe:</Typography>
         {renderSocials()}
       </Box>
     </Box>

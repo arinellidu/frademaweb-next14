@@ -132,7 +132,6 @@ input[type='number']::-webkit-inner-spin-button {
     font-style: normal;
     font-weight: 300, 400, 500, 700, 900;
     font-display: swap;
-    src: url(/fonts/Poppins.woff2) format('woff2');
   }
   body {
     @apply bg-background text-foreground;

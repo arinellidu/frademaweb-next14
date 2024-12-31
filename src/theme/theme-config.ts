@@ -36,8 +36,8 @@ export const themeConfig: ThemeConfig = {
    * Typography
    *************************************** */
   fontFamily: {
-    primary: 'Barlow',
-    secondary: 'Barlow',
+    primary: 'Poppins',
+    secondary: 'Inter',
   },
   /** **************************************
    * Palette

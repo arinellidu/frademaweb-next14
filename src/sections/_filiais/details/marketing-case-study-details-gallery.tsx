@@ -33,7 +33,7 @@ export function MarketingCaseStudyDetailsGallery({ images, sx, ...other }: Props
       <Box sx={[{ mt: 3 }, ...(Array.isArray(sx) ? sx : [sx])]} {...other}>
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 5 }}>
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
-            Gallery
+            Fotos
           </Typography>
           <CarouselArrowBasicButtons
             {...carousel.arrows}
