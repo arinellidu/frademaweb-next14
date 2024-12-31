@@ -3,49 +3,41 @@ import type { BoxProps } from '@mui/material/Box';
 import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
-import Timeline from '@mui/lab/Timeline';
-import TimelineDot from '@mui/lab/TimelineDot';
+
 import Container from '@mui/material/Container';
-import TimelineItem from '@mui/lab/TimelineItem';
+
 import Typography from '@mui/material/Typography';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
 
 import { CONFIG } from 'src/global-config';
 
-import { m } from 'framer-motion';
-
 import { Divider } from '@mui/material';
-import { autocomplete } from 'src/theme/core/components/autocomplete';
-import BlurryBlob from 'src/components/animata/background/blurry-blob';
 
 // ----------------------------------------------------------------------
 
-const COLORS = ['primary', 'secondary', 'warning', 'success'] as const;
+// const COLORS = ['primary', 'secondary', 'warning', 'success'] as const;
 
-const TIMELINES = [
-  {
-    title: 'Planejamento',
-    description:
-      'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
-  },
-  {
-    title: 'Pesquisa',
-    description:
-      'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
-  },
-  {
-    title: 'Otimização',
-    description:
-      'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
-  },
-  {
-    title: 'Resultados',
-    description:
-      'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
-  },
-];
+// const TIMELINES = [
+//   {
+//     title: 'Planejamento',
+//     description:
+//       'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
+//   },
+//   {
+//     title: 'Pesquisa',
+//     description:
+//       'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
+//   },
+//   {
+//     title: 'Otimização',
+//     description:
+//       'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
+//   },
+//   {
+//     title: 'Resultados',
+//     description:
+//       'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
+//   },
+// ];
 
 // ----------------------------------------------------------------------
 
@@ -69,7 +61,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
       >
         <Container className="mb-5">
           <Typography
-            className="mix-blend-luminosity text-blue-700 "
+            className="mix-blend-luminosity justify-center text-slate-700"
             marginTop={'70px'}
             paddingBottom={'80px'}
             fontSize={'182px'}
@@ -149,7 +141,7 @@ export function MarketingServicesHowItWork({ sx, ...other }: BoxProps) {
           </Container>
         </Box>
       </Box>
-      <Divider component="section" className="h-0 border-r-8 w-120 bg-gray-600" />
+      <Divider component="section" className="h-0 border-r-8  bg-gray-600" />
     </div>
   );
 }

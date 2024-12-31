@@ -27,8 +27,7 @@ import {
   CarouselArrowBasicButtons,
 } from 'src/components/carousel';
 import { Divider } from '@mui/material';
-import { secondary } from 'src/theme';
-import { ComponentBox } from 'src/sections/_examples/layout';
+import { Image } from 'src/components/image';
 
 // ----------------------------------------------------------------------
 
@@ -60,7 +59,7 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
           component="img"
           alt="Texture"
           src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
-          sx={{ top: 0, right: 0, height: 2, width: 'auto', position: 'absolute' }}
+          sx={{ top: 0, right: 0, height: 4, width: 'auto', position: 'absolute' }}
         />
 
         <Container sx={{ position: 'relative', marginTop: '-80px' }}>
@@ -72,6 +71,7 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
               transform: 'translateY(-64px)',
             }}
           >
+            {/* <Image src={`...${CONFIG.assetsDir}/assets/images/home/headertop.jpeg`} /> */}
             <GlareCard className="flex flex-col items-start justify-center py-8 px-6">
               {/* <CarouselDotButtons
                 variant="rounded"

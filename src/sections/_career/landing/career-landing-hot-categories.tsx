@@ -25,7 +25,7 @@ type Props = BoxProps & {
 
 export function CareerLandingHotCategories({ categories, sx, ...other }: Props) {
   return (
-    <div className="-mt-5">
+    <div className="pt-0">
       <Box
         component="section"
         sx={[

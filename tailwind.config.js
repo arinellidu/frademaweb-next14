@@ -12,6 +12,10 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      display: ['Poppins'],
+      body: ['"Poppins"'],
+    },
     extend: {
       keyframes: {
         'rotate-full': {

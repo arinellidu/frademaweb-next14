@@ -185,7 +185,7 @@ export function HomeFAQs({ sx, ...other }: BoxProps) {
 
   return (
     <>
-      <Divider my-6 />
+      <Divider my-6 className="" />
       <Box
         component="section"
         sx={[
